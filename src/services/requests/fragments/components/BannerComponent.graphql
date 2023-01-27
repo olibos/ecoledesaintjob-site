@@ -1,0 +1,23 @@
+fragment BannerComponent on BannerComponentBlockListItem
+{
+    __typename
+    Content{
+        headline
+        title
+        description
+        backgroundImage{
+            crops{
+                desktop{
+                    width
+                    height
+                    url
+                }
+            }
+        }
+
+        buttonText
+        buttonTarget{
+            url
+        }
+    }
+}

@@ -1,0 +1,6 @@
+fragment SeoComposition on SeoComposition {
+  seo {
+    title
+    description
+  }
+}

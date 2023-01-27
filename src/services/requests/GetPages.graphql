@@ -1,0 +1,9 @@
+query getPages {
+  content(url: "/") {
+    pages: descendantsOrSelf(where: { templateId_gt: 0 }) {
+      items {
+        url
+      }
+    }
+  }
+}

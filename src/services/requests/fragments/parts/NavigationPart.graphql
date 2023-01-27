@@ -1,0 +1,26 @@
+fragment NavigationPart on Query {
+  navigation: home {
+    topMenu {
+      title
+      content {
+        name
+        url
+      }
+      children {
+        title
+        content {
+          name
+          url
+        }
+      }
+    }
+
+    footerMenu{
+        title
+      content {
+        name
+        url
+      }
+    }
+  }
+}

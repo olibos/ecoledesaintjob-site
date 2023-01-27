@@ -1,0 +1,32 @@
+.banner
+{
+    background: url(https://cdn-61373911c1ac189674c0a5e7.closte.com/wp-content/uploads/sites/4/2015/08/slide2.jpg) no-repeat center;
+    background-size: cover;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0000007f; /* semi-transparent black */
+        z-index: 0; /* position behind the image */
+      }
+      
+    position: relative;
+    & > div:first-child{
+        min-height: 752px;
+    }
+}
+.overlay
+{
+    opacity: .5;
+    background:linear-gradient(to right, #00f6ff 0%, #007eff 25%, #7814ff 50%, #86297a 75%, #ff6600 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}

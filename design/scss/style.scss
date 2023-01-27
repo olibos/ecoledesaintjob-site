@@ -156,18 +156,6 @@ $btn-border-radius: 30px;
     opacity: 1;
 }
 
-.team .team-social {
-    top: 0;
-    background: rgba(23, 162, 184, .8);
-    opacity: 0;
-    z-index: 1;
-    transition: .5s;
-}
-
-.team:hover .team-social {
-    opacity: 1;
-}
-
 .testimonial-carousel .owl-dots {
     margin-top: 30px;
     text-align: center;

@@ -1,0 +1,8 @@
+query getPage($url: String!, $preview: Boolean = false) {
+  page: content(url: $url, preview: $preview) {
+    ...SeoComposition
+    ...BlocksComposition
+  }
+
+  ...NavigationPart
+}

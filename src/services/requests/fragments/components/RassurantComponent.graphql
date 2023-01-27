@@ -1,0 +1,12 @@
+fragment RassurantComponent on RassurantComponentBlockListItem
+{
+    __typename
+    Content{
+        list{
+            Content{
+                title
+                description
+            }
+        }
+    }
+}
