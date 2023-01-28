@@ -17,6 +17,530 @@ export type Scalars = {
   Long: number;
 };
 
+export type Activities = BlocksComposition & Content & SeoComposition & {
+  __typename?: 'Activities';
+  activityChildren?: Maybe<ActivityConnection>;
+  activityDescendants?: Maybe<ActivityConnection>;
+  ancestors?: Maybe<ContentConnection>;
+  ancestorsOrSelf?: Maybe<ContentConnection>;
+  children?: Maybe<ContentConnection>;
+  /** Composants */
+  components: Array<BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion>;
+  /** The Content Type alias */
+  contentTypeAlias: Scalars['String'];
+  /** The create date. */
+  createDate: Scalars['DateTime'];
+  descendants?: Maybe<ContentConnection>;
+  descendantsOrSelf?: Maybe<ContentConnection>;
+  /** The unique identifier. */
+  id: Scalars['ID'];
+  /** The level. */
+  level: Scalars['Int'];
+  /** The name. */
+  name?: Maybe<Scalars['String']>;
+  parent?: Maybe<Content>;
+  /** Référencement */
+  seo?: Maybe<SeoValues>;
+  /** The sort order. */
+  sortOrder: Scalars['Int'];
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
+  /** The identifier of the template to use to render the content item. */
+  templateId?: Maybe<Scalars['Int']>;
+  /** The update date. */
+  updateDate?: Maybe<Scalars['DateTime']>;
+  /** The URL. */
+  url?: Maybe<Scalars['String']>;
+  /** The URL segment of the content item. */
+  urlSegment?: Maybe<Scalars['String']>;
+};
+
+
+export type ActivitiesActivityChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivityOrderByInput>>>;
+  where?: InputMaybe<ActivityFilterInput>;
+};
+
+
+export type ActivitiesActivityDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivityOrderByInput>>>;
+  where?: InputMaybe<ActivityFilterInput>;
+};
+
+
+export type ActivitiesAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivitiesAncestorsOrSelfArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivitiesChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivitiesDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivitiesDescendantsOrSelfArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivitiesNameArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+
+export type ActivitiesUrlArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+export type ActivitiesConnection = {
+  __typename?: 'ActivitiesConnection';
+  edges: Array<Maybe<ActivitiesEdge>>;
+  items: Array<Maybe<Activities>>;
+  pageInfo?: Maybe<PageInfo>;
+};
+
+export type ActivitiesEdge = {
+  __typename?: 'ActivitiesEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node?: Maybe<Activities>;
+};
+
+export type ActivitiesFilterInput = {
+  /** All of the filters must match. */
+  AND?: InputMaybe<Array<ActivitiesFilterInput>>;
+  /** None of the filters must match. */
+  NOT?: InputMaybe<Array<ActivitiesFilterInput>>;
+  /** Some of the filters must match. */
+  OR?: InputMaybe<Array<ActivitiesFilterInput>>;
+  /** Field must equal value. */
+  contentTypeAlias?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  contentTypeAlias_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  contentTypeAlias_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  contentTypeAlias_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  contentTypeAlias_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  createDate?: InputMaybe<Scalars['DateTime']>;
+  /** Field must match any of the values. */
+  createDate_any?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
+  /** Field must be grater than the value. */
+  createDate_gt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be greater than or equal to the value. */
+  createDate_gte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than the value. */
+  createDate_lt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than or equal to the value. */
+  createDate_lte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must equal value. */
+  level?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  level_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  level_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  level_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  level_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  level_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  name?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  name_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  name_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  name_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  name_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  sortOrder?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  sortOrder_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  sortOrder_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  sortOrder_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  sortOrder_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  sortOrder_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  templateId?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  templateId_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  templateId_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  templateId_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  templateId_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  templateId_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  updateDate?: InputMaybe<Scalars['DateTime']>;
+  /** Field must match any of the values. */
+  updateDate_any?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
+  /** Field must be grater than the value. */
+  updateDate_gt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be greater than or equal to the value. */
+  updateDate_gte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than the value. */
+  updateDate_lt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than or equal to the value. */
+  updateDate_lte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must equal value. */
+  url?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  urlSegment?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  urlSegment_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  urlSegment_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  urlSegment_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  urlSegment_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  url_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+export enum ActivitiesOrderByInput {
+  /** Order by `contentTypeAlias` in ascending order. */
+  ContentTypeAliasAsc = 'contentTypeAlias_ASC',
+  /** Order by `contentTypeAlias` in descending order. */
+  ContentTypeAliasDesc = 'contentTypeAlias_DESC',
+  /** Order by `createDate` in ascending order. */
+  CreateDateAsc = 'createDate_ASC',
+  /** Order by `createDate` in descending order. */
+  CreateDateDesc = 'createDate_DESC',
+  /** Order by `level` in ascending order. */
+  LevelAsc = 'level_ASC',
+  /** Order by `level` in descending order. */
+  LevelDesc = 'level_DESC',
+  /** Order by `name` in ascending order. */
+  NameAsc = 'name_ASC',
+  /** Order by `name` in descending order. */
+  NameDesc = 'name_DESC',
+  /** Order by `path` in ascending order. */
+  PathAsc = 'path_ASC',
+  /** Order by `path` in descending order. */
+  PathDesc = 'path_DESC',
+  /** Order by `sortOrder` in ascending order. */
+  SortOrderAsc = 'sortOrder_ASC',
+  /** Order by `sortOrder` in descending order. */
+  SortOrderDesc = 'sortOrder_DESC',
+  /** Order by `updateDate` in ascending order. */
+  UpdateDateAsc = 'updateDate_ASC',
+  /** Order by `updateDate` in descending order. */
+  UpdateDateDesc = 'updateDate_DESC'
+}
+
+export type Activity = BlocksComposition & Content & SeoComposition & {
+  __typename?: 'Activity';
+  ancestors?: Maybe<ContentConnection>;
+  ancestorsOrSelf?: Maybe<ContentConnection>;
+  children?: Maybe<ContentConnection>;
+  /** Composants */
+  components: Array<BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion>;
+  /** The Content Type alias */
+  contentTypeAlias: Scalars['String'];
+  /** The create date. */
+  createDate: Scalars['DateTime'];
+  descendants?: Maybe<ContentConnection>;
+  descendantsOrSelf?: Maybe<ContentConnection>;
+  /** The unique identifier. */
+  id: Scalars['ID'];
+  /** The level. */
+  level: Scalars['Int'];
+  /** The name. */
+  name?: Maybe<Scalars['String']>;
+  parent?: Maybe<Content>;
+  /** Référencement */
+  seo?: Maybe<SeoValues>;
+  /** The sort order. */
+  sortOrder: Scalars['Int'];
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
+  /** The identifier of the template to use to render the content item. */
+  templateId?: Maybe<Scalars['Int']>;
+  /** The update date. */
+  updateDate?: Maybe<Scalars['DateTime']>;
+  /** The URL. */
+  url?: Maybe<Scalars['String']>;
+  /** The URL segment of the content item. */
+  urlSegment?: Maybe<Scalars['String']>;
+};
+
+
+export type ActivityAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivityAncestorsOrSelfArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivityChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivityDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivityDescendantsOrSelfArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ActivityNameArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+
+export type ActivityUrlArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+export type ActivityConnection = {
+  __typename?: 'ActivityConnection';
+  edges: Array<Maybe<ActivityEdge>>;
+  items: Array<Maybe<Activity>>;
+  pageInfo?: Maybe<PageInfo>;
+};
+
+export type ActivityEdge = {
+  __typename?: 'ActivityEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node?: Maybe<Activity>;
+};
+
+export type ActivityFilterInput = {
+  /** All of the filters must match. */
+  AND?: InputMaybe<Array<ActivityFilterInput>>;
+  /** None of the filters must match. */
+  NOT?: InputMaybe<Array<ActivityFilterInput>>;
+  /** Some of the filters must match. */
+  OR?: InputMaybe<Array<ActivityFilterInput>>;
+  /** Field must equal value. */
+  contentTypeAlias?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  contentTypeAlias_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  contentTypeAlias_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  contentTypeAlias_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  contentTypeAlias_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  createDate?: InputMaybe<Scalars['DateTime']>;
+  /** Field must match any of the values. */
+  createDate_any?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
+  /** Field must be grater than the value. */
+  createDate_gt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be greater than or equal to the value. */
+  createDate_gte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than the value. */
+  createDate_lt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than or equal to the value. */
+  createDate_lte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must equal value. */
+  level?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  level_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  level_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  level_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  level_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  level_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  name?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  name_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  name_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  name_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  name_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  sortOrder?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  sortOrder_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  sortOrder_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  sortOrder_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  sortOrder_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  sortOrder_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  templateId?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  templateId_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  templateId_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  templateId_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  templateId_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  templateId_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  updateDate?: InputMaybe<Scalars['DateTime']>;
+  /** Field must match any of the values. */
+  updateDate_any?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
+  /** Field must be grater than the value. */
+  updateDate_gt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be greater than or equal to the value. */
+  updateDate_gte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than the value. */
+  updateDate_lt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than or equal to the value. */
+  updateDate_lte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must equal value. */
+  url?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  urlSegment?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  urlSegment_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  urlSegment_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  urlSegment_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  urlSegment_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  url_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+export enum ActivityOrderByInput {
+  /** Order by `contentTypeAlias` in ascending order. */
+  ContentTypeAliasAsc = 'contentTypeAlias_ASC',
+  /** Order by `contentTypeAlias` in descending order. */
+  ContentTypeAliasDesc = 'contentTypeAlias_DESC',
+  /** Order by `createDate` in ascending order. */
+  CreateDateAsc = 'createDate_ASC',
+  /** Order by `createDate` in descending order. */
+  CreateDateDesc = 'createDate_DESC',
+  /** Order by `level` in ascending order. */
+  LevelAsc = 'level_ASC',
+  /** Order by `level` in descending order. */
+  LevelDesc = 'level_DESC',
+  /** Order by `name` in ascending order. */
+  NameAsc = 'name_ASC',
+  /** Order by `name` in descending order. */
+  NameDesc = 'name_DESC',
+  /** Order by `path` in ascending order. */
+  PathAsc = 'path_ASC',
+  /** Order by `path` in descending order. */
+  PathDesc = 'path_DESC',
+  /** Order by `sortOrder` in ascending order. */
+  SortOrderAsc = 'sortOrder_ASC',
+  /** Order by `sortOrder` in descending order. */
+  SortOrderDesc = 'sortOrder_DESC',
+  /** Order by `updateDate` in ascending order. */
+  UpdateDateAsc = 'updateDate_ASC',
+  /** Order by `updateDate` in descending order. */
+  UpdateDateDesc = 'updateDate_DESC'
+}
+
 export type BannerComponent = Element & {
   __typename?: 'BannerComponent';
   /** Image de fond */
@@ -29,10 +553,10 @@ export type BannerComponent = Element & {
   contentTypeAlias: Scalars['String'];
   /** Description */
   description?: Maybe<Scalars['String']>;
-  /** Entête */
-  headline?: Maybe<Scalars['String']>;
   /** The unique identifier. */
   id: Scalars['ID'];
+  /** Surtitre */
+  surtitle?: Maybe<Scalars['String']>;
   /** Titre */
   title?: Maybe<Scalars['String']>;
 };
@@ -42,11 +566,11 @@ export type BannerComponentBlockListItem = {
   Content?: Maybe<BannerComponent>;
 };
 
-export type BannerComponentBlockListItemRassurantComponentBlockListItemUnion = BannerComponentBlockListItem | RassurantComponentBlockListItem;
+export type BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion = BannerComponentBlockListItem | RassurantsComponentBlockListItem | TeachersComponentBlockListItem;
 
 export type BlocksComposition = {
   /** Composants */
-  components: Array<BannerComponentBlockListItemRassurantComponentBlockListItemUnion>;
+  components: Array<BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion>;
   /** The Content Type alias */
   contentTypeAlias: Scalars['String'];
   /** The unique identifier. */
@@ -303,7 +827,9 @@ export type ContentPage = BlocksComposition & Content & SeoComposition & {
   ancestorsOrSelf?: Maybe<ContentConnection>;
   children?: Maybe<ContentConnection>;
   /** Composants */
-  components: Array<BannerComponentBlockListItemRassurantComponentBlockListItemUnion>;
+  components: Array<BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion>;
+  contentPageChildren?: Maybe<ContentPageConnection>;
+  contentPageDescendants?: Maybe<ContentPageConnection>;
   /** The Content Type alias */
   contentTypeAlias: Scalars['String'];
   /** The create date. */
@@ -361,6 +887,26 @@ export type ContentPageChildrenArgs = {
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
   where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type ContentPageContentPageChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentPageOrderByInput>>>;
+  where?: InputMaybe<ContentPageFilterInput>;
+};
+
+
+export type ContentPageContentPageDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentPageOrderByInput>>>;
+  where?: InputMaybe<ContentPageFilterInput>;
 };
 
 
@@ -591,6 +1137,53 @@ export type EditorBannerBackgroundImageMediaPickerCrops = {
   __typename?: 'EditorBannerBackgroundImageMediaPickerCrops';
   /** Desktop */
   desktop?: Maybe<MediaCrop>;
+};
+
+export type EditorTeacherPhotoMediaPicker = {
+  __typename?: 'EditorTeacherPhotoMediaPicker';
+  /** The Content Type alias */
+  contentTypeAlias: Scalars['String'];
+  /** The create date. */
+  createDate: Scalars['DateTime'];
+  crops?: Maybe<EditorTeacherPhotoMediaPickerCrops>;
+  /** The unique identifier. */
+  id: Scalars['ID'];
+  /** The level. */
+  level: Scalars['Int'];
+  /** The name. */
+  name?: Maybe<Scalars['String']>;
+  /** The sort order. */
+  sortOrder: Scalars['Int'];
+  /** Size - in bytes */
+  umbracoBytes?: Maybe<Scalars['Long']>;
+  /** Type */
+  umbracoExtension?: Maybe<Scalars['String']>;
+  /** Height - in pixels */
+  umbracoHeight?: Maybe<Scalars['Long']>;
+  /** Width - in pixels */
+  umbracoWidth?: Maybe<Scalars['Long']>;
+  /** The update date. */
+  updateDate?: Maybe<Scalars['DateTime']>;
+  /** The URL. */
+  url?: Maybe<Scalars['String']>;
+};
+
+
+export type EditorTeacherPhotoMediaPickerNameArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+
+export type EditorTeacherPhotoMediaPickerUrlArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+export type EditorTeacherPhotoMediaPickerCrops = {
+  __typename?: 'EditorTeacherPhotoMediaPickerCrops';
+  /** Desktop */
+  desktop?: Maybe<MediaCrop>;
+  /** Mobile */
+  mobile?: Maybe<MediaCrop>;
 };
 
 export type Element = {
@@ -1156,11 +1749,14 @@ export enum FolderOrderByInput {
 
 export type Home = BlocksComposition & Content & SeoComposition & {
   __typename?: 'Home';
+  activitiesChildren?: Maybe<ActivitiesConnection>;
+  activitiesDescendants?: Maybe<ActivitiesConnection>;
+  activityDescendants?: Maybe<ActivityConnection>;
   ancestors?: Maybe<ContentConnection>;
   ancestorsOrSelf?: Maybe<ContentConnection>;
   children?: Maybe<ContentConnection>;
   /** Composants */
-  components: Array<BannerComponentBlockListItemRassurantComponentBlockListItemUnion>;
+  components: Array<BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion>;
   contentPageChildren?: Maybe<ContentPageConnection>;
   contentPageDescendants?: Maybe<ContentPageConnection>;
   /** The Content Type alias */
@@ -1177,6 +1773,8 @@ export type Home = BlocksComposition & Content & SeoComposition & {
   level: Scalars['Int'];
   /** The name. */
   name?: Maybe<Scalars['String']>;
+  newsListChildren?: Maybe<NewsListConnection>;
+  newsListDescendants?: Maybe<NewsListConnection>;
   parent?: Maybe<Content>;
   /** Référencement */
   seo?: Maybe<SeoValues>;
@@ -1194,6 +1792,36 @@ export type Home = BlocksComposition & Content & SeoComposition & {
   url?: Maybe<Scalars['String']>;
   /** The URL segment of the content item. */
   urlSegment?: Maybe<Scalars['String']>;
+};
+
+
+export type HomeActivitiesChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivitiesOrderByInput>>>;
+  where?: InputMaybe<ActivitiesFilterInput>;
+};
+
+
+export type HomeActivitiesDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivitiesOrderByInput>>>;
+  where?: InputMaybe<ActivitiesFilterInput>;
+};
+
+
+export type HomeActivityDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivityOrderByInput>>>;
+  where?: InputMaybe<ActivityFilterInput>;
 };
 
 
@@ -1269,6 +1897,26 @@ export type HomeDescendantsOrSelfArgs = {
 
 export type HomeNameArgs = {
   culture?: InputMaybe<Scalars['String']>;
+};
+
+
+export type HomeNewsListChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<NewsListOrderByInput>>>;
+  where?: InputMaybe<NewsListFilterInput>;
+};
+
+
+export type HomeNewsListDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<NewsListOrderByInput>>>;
+  where?: InputMaybe<NewsListFilterInput>;
 };
 
 
@@ -1651,6 +2299,257 @@ export type MediaCrop = {
   width?: Maybe<Scalars['Int']>;
 };
 
+export type NewsList = BlocksComposition & Content & SeoComposition & {
+  __typename?: 'NewsList';
+  ancestors?: Maybe<ContentConnection>;
+  ancestorsOrSelf?: Maybe<ContentConnection>;
+  children?: Maybe<ContentConnection>;
+  /** Composants */
+  components: Array<BannerComponentBlockListItemRassurantsComponentBlockListItemTeachersComponentBlockListItemUnion>;
+  /** The Content Type alias */
+  contentTypeAlias: Scalars['String'];
+  /** The create date. */
+  createDate: Scalars['DateTime'];
+  descendants?: Maybe<ContentConnection>;
+  descendantsOrSelf?: Maybe<ContentConnection>;
+  /** The unique identifier. */
+  id: Scalars['ID'];
+  /** The level. */
+  level: Scalars['Int'];
+  /** The name. */
+  name?: Maybe<Scalars['String']>;
+  parent?: Maybe<Content>;
+  /** Référencement */
+  seo?: Maybe<SeoValues>;
+  /** The sort order. */
+  sortOrder: Scalars['Int'];
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
+  /** The identifier of the template to use to render the content item. */
+  templateId?: Maybe<Scalars['Int']>;
+  /** The update date. */
+  updateDate?: Maybe<Scalars['DateTime']>;
+  /** The URL. */
+  url?: Maybe<Scalars['String']>;
+  /** The URL segment of the content item. */
+  urlSegment?: Maybe<Scalars['String']>;
+};
+
+
+export type NewsListAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type NewsListAncestorsOrSelfArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type NewsListChildrenArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type NewsListDescendantsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type NewsListDescendantsOrSelfArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContentOrderByInput>>>;
+  where?: InputMaybe<ContentFilterInput>;
+};
+
+
+export type NewsListNameArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+
+export type NewsListUrlArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+};
+
+export type NewsListConnection = {
+  __typename?: 'NewsListConnection';
+  edges: Array<Maybe<NewsListEdge>>;
+  items: Array<Maybe<NewsList>>;
+  pageInfo?: Maybe<PageInfo>;
+};
+
+export type NewsListEdge = {
+  __typename?: 'NewsListEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node?: Maybe<NewsList>;
+};
+
+export type NewsListFilterInput = {
+  /** All of the filters must match. */
+  AND?: InputMaybe<Array<NewsListFilterInput>>;
+  /** None of the filters must match. */
+  NOT?: InputMaybe<Array<NewsListFilterInput>>;
+  /** Some of the filters must match. */
+  OR?: InputMaybe<Array<NewsListFilterInput>>;
+  /** Field must equal value. */
+  contentTypeAlias?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  contentTypeAlias_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  contentTypeAlias_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  contentTypeAlias_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  contentTypeAlias_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  createDate?: InputMaybe<Scalars['DateTime']>;
+  /** Field must match any of the values. */
+  createDate_any?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
+  /** Field must be grater than the value. */
+  createDate_gt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be greater than or equal to the value. */
+  createDate_gte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than the value. */
+  createDate_lt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than or equal to the value. */
+  createDate_lte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must equal value. */
+  level?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  level_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  level_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  level_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  level_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  level_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  name?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  name_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  name_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  name_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  name_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  sortOrder?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  sortOrder_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  sortOrder_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  sortOrder_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  sortOrder_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  sortOrder_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  templateId?: InputMaybe<Scalars['Int']>;
+  /** Field must match any of the values. */
+  templateId_any?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** Field must be grater than the value. */
+  templateId_gt?: InputMaybe<Scalars['Int']>;
+  /** Field must be greater than or equal to the value. */
+  templateId_gte?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than the value. */
+  templateId_lt?: InputMaybe<Scalars['Int']>;
+  /** Field must be lower than or equal to the value. */
+  templateId_lte?: InputMaybe<Scalars['Int']>;
+  /** Field must equal value. */
+  updateDate?: InputMaybe<Scalars['DateTime']>;
+  /** Field must match any of the values. */
+  updateDate_any?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
+  /** Field must be grater than the value. */
+  updateDate_gt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be greater than or equal to the value. */
+  updateDate_gte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than the value. */
+  updateDate_lt?: InputMaybe<Scalars['DateTime']>;
+  /** Field must be lower than or equal to the value. */
+  updateDate_lte?: InputMaybe<Scalars['DateTime']>;
+  /** Field must equal value. */
+  url?: InputMaybe<Scalars['String']>;
+  /** Field must equal value. */
+  urlSegment?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  urlSegment_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  urlSegment_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  urlSegment_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  urlSegment_starts_with?: InputMaybe<Scalars['String']>;
+  /** Field must match any of the values. */
+  url_any?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Field must constain the value. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** Field must end with the value. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** Field must start with the value. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+export enum NewsListOrderByInput {
+  /** Order by `contentTypeAlias` in ascending order. */
+  ContentTypeAliasAsc = 'contentTypeAlias_ASC',
+  /** Order by `contentTypeAlias` in descending order. */
+  ContentTypeAliasDesc = 'contentTypeAlias_DESC',
+  /** Order by `createDate` in ascending order. */
+  CreateDateAsc = 'createDate_ASC',
+  /** Order by `createDate` in descending order. */
+  CreateDateDesc = 'createDate_DESC',
+  /** Order by `level` in ascending order. */
+  LevelAsc = 'level_ASC',
+  /** Order by `level` in descending order. */
+  LevelDesc = 'level_DESC',
+  /** Order by `name` in ascending order. */
+  NameAsc = 'name_ASC',
+  /** Order by `name` in descending order. */
+  NameDesc = 'name_DESC',
+  /** Order by `path` in ascending order. */
+  PathAsc = 'path_ASC',
+  /** Order by `path` in descending order. */
+  PathDesc = 'path_DESC',
+  /** Order by `sortOrder` in ascending order. */
+  SortOrderAsc = 'sortOrder_ASC',
+  /** Order by `sortOrder` in descending order. */
+  SortOrderDesc = 'sortOrder_DESC',
+  /** Order by `updateDate` in ascending order. */
+  UpdateDateAsc = 'updateDate_ASC',
+  /** Order by `updateDate` in descending order. */
+  UpdateDateDesc = 'updateDate_DESC'
+}
+
 export type PageInfo = {
   __typename?: 'PageInfo';
   /** When paginating forwards, the cursor to continue. */
@@ -1668,12 +2567,17 @@ export type Query = {
   File?: Maybe<File>;
   Folder?: Maybe<Folder>;
   Image?: Maybe<Image>;
+  activities?: Maybe<Activities>;
+  activity?: Maybe<Activity>;
+  allActivities?: Maybe<ActivitiesConnection>;
+  allActivity?: Maybe<ActivityConnection>;
   allContent?: Maybe<ContentConnection>;
   allContentPage?: Maybe<ContentPageConnection>;
   allFile?: Maybe<FileConnection>;
   allFolder?: Maybe<FolderConnection>;
   allHome?: Maybe<HomeConnection>;
   allImage?: Maybe<ImageConnection>;
+  allNewsList?: Maybe<NewsListConnection>;
   allUmbracoMediaArticle?: Maybe<UmbracoMediaArticleConnection>;
   allUmbracoMediaAudio?: Maybe<UmbracoMediaAudioConnection>;
   allUmbracoMediaVectorGraphics?: Maybe<UmbracoMediaVectorGraphicsConnection>;
@@ -1681,6 +2585,7 @@ export type Query = {
   content?: Maybe<Content>;
   contentPage?: Maybe<ContentPage>;
   home?: Maybe<Home>;
+  newsList?: Maybe<NewsList>;
   search?: Maybe<ContentConnection>;
   umbracoMediaArticle?: Maybe<UmbracoMediaArticle>;
   umbracoMediaAudio?: Maybe<UmbracoMediaAudio>;
@@ -1713,6 +2618,44 @@ export type QueryImageArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   url?: InputMaybe<Scalars['String']>;
   where?: InputMaybe<ImageFilterInput>;
+};
+
+
+export type QueryActivitiesArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  url?: InputMaybe<Scalars['String']>;
+  where?: InputMaybe<ActivitiesFilterInput>;
+};
+
+
+export type QueryActivityArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  url?: InputMaybe<Scalars['String']>;
+  where?: InputMaybe<ActivityFilterInput>;
+};
+
+
+export type QueryAllActivitiesArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivitiesOrderByInput>>>;
+  where?: InputMaybe<ActivitiesFilterInput>;
+};
+
+
+export type QueryAllActivityArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<ActivityOrderByInput>>>;
+  where?: InputMaybe<ActivityFilterInput>;
 };
 
 
@@ -1773,6 +2716,16 @@ export type QueryAllImageArgs = {
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<InputMaybe<ImageOrderByInput>>>;
   where?: InputMaybe<ImageFilterInput>;
+};
+
+
+export type QueryAllNewsListArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<InputMaybe<NewsListOrderByInput>>>;
+  where?: InputMaybe<NewsListFilterInput>;
 };
 
 
@@ -1842,6 +2795,15 @@ export type QueryHomeArgs = {
 };
 
 
+export type QueryNewsListArgs = {
+  culture?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  url?: InputMaybe<Scalars['String']>;
+  where?: InputMaybe<NewsListFilterInput>;
+};
+
+
 export type QuerySearchArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -1907,8 +2869,8 @@ export type RassurantBlockListItem = {
   Content?: Maybe<Rassurant>;
 };
 
-export type RassurantComponent = Element & {
-  __typename?: 'RassurantComponent';
+export type RassurantsComponent = Element & {
+  __typename?: 'RassurantsComponent';
   /** The Content Type alias */
   contentTypeAlias: Scalars['String'];
   /** The unique identifier. */
@@ -1917,9 +2879,9 @@ export type RassurantComponent = Element & {
   list: Array<RassurantBlockListItem>;
 };
 
-export type RassurantComponentBlockListItem = {
-  __typename?: 'RassurantComponentBlockListItem';
-  Content?: Maybe<RassurantComponent>;
+export type RassurantsComponentBlockListItem = {
+  __typename?: 'RassurantsComponentBlockListItem';
+  Content?: Maybe<RassurantsComponent>;
 };
 
 export type SeoComposition = {
@@ -1935,6 +2897,44 @@ export type SeoValues = {
   __typename?: 'SeoValues';
   description?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+};
+
+export type Teacher = Element & {
+  __typename?: 'Teacher';
+  /** The Content Type alias */
+  contentTypeAlias: Scalars['String'];
+  /** The unique identifier. */
+  id: Scalars['ID'];
+  /** Photo */
+  photo?: Maybe<EditorTeacherPhotoMediaPicker>;
+  /** Fonction */
+  teacherFunction?: Maybe<Scalars['String']>;
+  /** Nom */
+  teacherName?: Maybe<Scalars['String']>;
+};
+
+export type TeacherBlockListItem = {
+  __typename?: 'TeacherBlockListItem';
+  Content?: Maybe<Teacher>;
+};
+
+export type TeachersComponent = Element & {
+  __typename?: 'TeachersComponent';
+  /** The Content Type alias */
+  contentTypeAlias: Scalars['String'];
+  /** The unique identifier. */
+  id: Scalars['ID'];
+  /** Surtitre */
+  surtitle?: Maybe<Scalars['String']>;
+  /** Professeurs */
+  teachers: Array<TeacherBlockListItem>;
+  /** Titre */
+  title?: Maybe<Scalars['String']>;
+};
+
+export type TeachersComponentBlockListItem = {
+  __typename?: 'TeachersComponentBlockListItem';
+  Content?: Maybe<TeachersComponent>;
 };
 
 export type UmbNavItem = {
@@ -2795,36 +3795,50 @@ export type GetPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPageQuery = { __typename?: 'Query', page?: { __typename?: 'ContentPage', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', headline?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null } | null } | { __typename: 'RassurantComponentBlockListItem', Content?: { __typename?: 'RassurantComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null }> } | { __typename?: 'Home', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', headline?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null } | null } | { __typename: 'RassurantComponentBlockListItem', Content?: { __typename?: 'RassurantComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null }> } | null, navigation?: { __typename?: 'Home', topMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | null, children: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | null } | null> } | null>, footerMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | null } | null> } | null };
+export type GetPageQuery = { __typename?: 'Query', page?: { __typename?: 'Activities', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> } | { __typename?: 'Activity', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> } | { __typename?: 'ContentPage', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> } | { __typename?: 'Home', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> } | { __typename?: 'NewsList', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null, components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> } | null, navigation?: { __typename?: 'Home', topMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'Activities', name?: string | null, url?: string | null } | { __typename?: 'Activity', name?: string | null, url?: string | null } | { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | { __typename?: 'NewsList', name?: string | null, url?: string | null } | null, children: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'Activities', name?: string | null, url?: string | null } | { __typename?: 'Activity', name?: string | null, url?: string | null } | { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | { __typename?: 'NewsList', name?: string | null, url?: string | null } | null } | null> } | null>, footerMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'Activities', name?: string | null, url?: string | null } | { __typename?: 'Activity', name?: string | null, url?: string | null } | { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | { __typename?: 'NewsList', name?: string | null, url?: string | null } | null } | null> } | null };
 
 export type GetPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPagesQuery = { __typename?: 'Query', content?: { __typename?: 'ContentPage', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null> } | null } | { __typename?: 'Home', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null> } | null } | null };
+export type GetPagesQuery = { __typename?: 'Query', content?: { __typename?: 'Activities', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null> } | null } | { __typename?: 'Activity', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null> } | null } | { __typename?: 'ContentPage', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null> } | null } | { __typename?: 'Home', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null> } | null } | { __typename?: 'NewsList', pages?: { __typename?: 'ContentConnection', items: Array<{ __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null> } | null } | null };
 
-export type BannerComponentFragment = { __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', headline?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null } | null };
+export type BannerComponentFragment = { __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null };
 
-export type RassurantComponentFragment = { __typename: 'RassurantComponentBlockListItem', Content?: { __typename?: 'RassurantComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null };
+export type RassurantsComponentFragment = { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null };
 
-type BlocksComposition_ContentPage_Fragment = { __typename?: 'ContentPage', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', headline?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null } | null } | { __typename: 'RassurantComponentBlockListItem', Content?: { __typename?: 'RassurantComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null }> };
+export type TeachersComponentFragment = { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null };
 
-type BlocksComposition_Home_Fragment = { __typename?: 'Home', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', headline?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | null } | null } | { __typename: 'RassurantComponentBlockListItem', Content?: { __typename?: 'RassurantComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null }> };
+type BlocksComposition_Activities_Fragment = { __typename?: 'Activities', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> };
 
-export type BlocksCompositionFragment = BlocksComposition_ContentPage_Fragment | BlocksComposition_Home_Fragment;
+type BlocksComposition_Activity_Fragment = { __typename?: 'Activity', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> };
+
+type BlocksComposition_ContentPage_Fragment = { __typename?: 'ContentPage', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> };
+
+type BlocksComposition_Home_Fragment = { __typename?: 'Home', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> };
+
+type BlocksComposition_NewsList_Fragment = { __typename?: 'NewsList', components: Array<{ __typename: 'BannerComponentBlockListItem', Content?: { __typename?: 'BannerComponent', surtitle?: string | null, title?: string | null, description?: string | null, buttonText?: string | null, backgroundImage?: { __typename?: 'EditorBannerBackgroundImageMediaPicker', crops?: { __typename?: 'EditorBannerBackgroundImageMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', width?: number | null, height?: number | null, url: string } | null } | null } | null, buttonTarget?: { __typename?: 'Activities', url?: string | null } | { __typename?: 'Activity', url?: string | null } | { __typename?: 'ContentPage', url?: string | null } | { __typename?: 'Home', url?: string | null } | { __typename?: 'NewsList', url?: string | null } | null } | null } | { __typename: 'RassurantsComponentBlockListItem', Content?: { __typename?: 'RassurantsComponent', list: Array<{ __typename?: 'RassurantBlockListItem', Content?: { __typename?: 'Rassurant', title?: string | null, description?: string | null } | null }> } | null } | { __typename: 'TeachersComponentBlockListItem', Content?: { __typename?: 'TeachersComponent', surtitle?: string | null, title?: string | null, teachers: Array<{ __typename?: 'TeacherBlockListItem', Content?: { __typename?: 'Teacher', teacherName?: string | null, teacherFunction?: string | null, photo?: { __typename?: 'EditorTeacherPhotoMediaPicker', crops?: { __typename?: 'EditorTeacherPhotoMediaPickerCrops', desktop?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null, mobile?: { __typename?: 'MediaCrop', url: string, width?: number | null, height?: number | null } | null } | null } | null } | null }> } | null }> };
+
+export type BlocksCompositionFragment = BlocksComposition_Activities_Fragment | BlocksComposition_Activity_Fragment | BlocksComposition_ContentPage_Fragment | BlocksComposition_Home_Fragment | BlocksComposition_NewsList_Fragment;
+
+type SeoComposition_Activities_Fragment = { __typename?: 'Activities', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null };
+
+type SeoComposition_Activity_Fragment = { __typename?: 'Activity', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null };
 
 type SeoComposition_ContentPage_Fragment = { __typename?: 'ContentPage', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null };
 
 type SeoComposition_Home_Fragment = { __typename?: 'Home', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null };
 
-export type SeoCompositionFragment = SeoComposition_ContentPage_Fragment | SeoComposition_Home_Fragment;
+type SeoComposition_NewsList_Fragment = { __typename?: 'NewsList', seo?: { __typename?: 'SeoValues', title?: string | null, description?: string | null } | null };
 
-export type NavigationPartFragment = { __typename?: 'Query', navigation?: { __typename?: 'Home', topMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | null, children: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | null } | null> } | null>, footerMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | null } | null> } | null };
+export type SeoCompositionFragment = SeoComposition_Activities_Fragment | SeoComposition_Activity_Fragment | SeoComposition_ContentPage_Fragment | SeoComposition_Home_Fragment | SeoComposition_NewsList_Fragment;
+
+export type NavigationPartFragment = { __typename?: 'Query', navigation?: { __typename?: 'Home', topMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'Activities', name?: string | null, url?: string | null } | { __typename?: 'Activity', name?: string | null, url?: string | null } | { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | { __typename?: 'NewsList', name?: string | null, url?: string | null } | null, children: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'Activities', name?: string | null, url?: string | null } | { __typename?: 'Activity', name?: string | null, url?: string | null } | { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | { __typename?: 'NewsList', name?: string | null, url?: string | null } | null } | null> } | null>, footerMenu: Array<{ __typename?: 'UmbNavItem', title?: string | null, content?: { __typename?: 'Activities', name?: string | null, url?: string | null } | { __typename?: 'Activity', name?: string | null, url?: string | null } | { __typename?: 'ContentPage', name?: string | null, url?: string | null } | { __typename?: 'Home', name?: string | null, url?: string | null } | { __typename?: 'NewsList', name?: string | null, url?: string | null } | null } | null> } | null };
 
 export const BannerComponentFragmentDoc = gql`
     fragment BannerComponent on BannerComponentBlockListItem {
   __typename
   Content {
-    headline
+    surtitle
     title
     description
     backgroundImage {
@@ -2843,8 +3857,8 @@ export const BannerComponentFragmentDoc = gql`
   }
 }
     `;
-export const RassurantComponentFragmentDoc = gql`
-    fragment RassurantComponent on RassurantComponentBlockListItem {
+export const RassurantsComponentFragmentDoc = gql`
+    fragment RassurantsComponent on RassurantsComponentBlockListItem {
   __typename
   Content {
     list {
@@ -2856,15 +3870,46 @@ export const RassurantComponentFragmentDoc = gql`
   }
 }
     `;
+export const TeachersComponentFragmentDoc = gql`
+    fragment TeachersComponent on TeachersComponentBlockListItem {
+  __typename
+  Content {
+    surtitle
+    title
+    teachers {
+      Content {
+        teacherName
+        teacherFunction
+        photo {
+          crops {
+            desktop {
+              url
+              width
+              height
+            }
+            mobile {
+              url
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
 export const BlocksCompositionFragmentDoc = gql`
     fragment BlocksComposition on BlocksComposition {
   components {
     ...BannerComponent
-    ...RassurantComponent
+    ...RassurantsComponent
+    ...TeachersComponent
   }
 }
     ${BannerComponentFragmentDoc}
-${RassurantComponentFragmentDoc}`;
+${RassurantsComponentFragmentDoc}
+${TeachersComponentFragmentDoc}`;
 export const SeoCompositionFragmentDoc = gql`
     fragment SeoComposition on SeoComposition {
   seo {

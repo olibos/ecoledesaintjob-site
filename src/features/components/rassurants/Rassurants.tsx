@@ -1,6 +1,6 @@
-import { RassurantComponentBlockListItem } from '@/services/GraphQL';
+import { RassurantsComponentBlockListItem } from '@/services/GraphQL';
 
-export function Rassurants({ list }: RassurantComponentBlockListItem["Content"])
+export function Rassurants({ list }: RassurantsComponentBlockListItem["Content"])
 {
     return (
         <div className="container-fluid pt-1">

@@ -9,7 +9,6 @@ import {
   BackToTop,
   Footer,
   Header,
-  Teachers,
 } from '@/features/common';
 import {
   Blocks,
@@ -33,7 +32,6 @@ export default function CmsPage(props: PageContent)
       <Blocks />
       <About />
       <Activities />
-      <Teachers />
       <Testimonials />
       <NewsList />
       <Footer />

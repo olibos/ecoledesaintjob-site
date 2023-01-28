@@ -1,4 +1,4 @@
-fragment RassurantComponent on RassurantComponentBlockListItem
+fragment RassurantsComponent on RassurantsComponentBlockListItem
 {
     __typename
     Content{

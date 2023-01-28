@@ -3,6 +3,16 @@ import { resolve } from 'path';
 /** @type {import("next").NextConfig} */
 const config = {
     reactStrictMode: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'ik.imagekit.io',
+                port: '',
+                pathname: '/stockath/stjob/**',
+            },
+        ],
+    },
 };
 
 /** @type {(phase: string) => import("next").NextConfig} */

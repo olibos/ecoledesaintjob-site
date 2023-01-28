@@ -2,7 +2,7 @@ fragment BannerComponent on BannerComponentBlockListItem
 {
     __typename
     Content{
-        headline
+        surtitle
         title
         description
         backgroundImage{

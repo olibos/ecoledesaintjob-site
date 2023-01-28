@@ -5,13 +5,13 @@ import { BannerComponentBlockListItem } from '@/services/GraphQL';
 
 import Styles from './Banner.module.scss';
 
-export function Banner({headline, title, description, backgroundImage, buttonText, buttonTarget}: BannerComponentBlockListItem["Content"])
+export function Banner({surtitle, title, description, backgroundImage, buttonText, buttonTarget}: BannerComponentBlockListItem["Content"])
 {
     return (
         <div className={classNames("container-fluid -bg-primary px-md-5 mb-5", Styles.banner)} >
             <div className="row align-items-center px-3">
                 <div className="col-lg-6 text-center text-lg-left">
-                    <h4 className="text-white mb-4 mt-5 mt-lg-0">{headline}</h4>
+                    <h4 className="text-white mb-4 mt-5 mt-lg-0">{surtitle}</h4>
                     <h1 className="display-3 font-weight-bold text-white">{title}</h1>
                     <p className="text-white mb-4 text-justify">
                         {description}

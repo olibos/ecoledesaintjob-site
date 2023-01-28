@@ -1,0 +1,27 @@
+fragment TeachersComponent on TeachersComponentBlockListItem {
+  __typename
+  Content {
+    surtitle
+    title
+    teachers {
+      Content {
+        teacherName
+        teacherFunction
+        photo {
+          crops {
+            desktop {
+              url
+              width
+              height
+            }
+            mobile {
+              url
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+  }
+}

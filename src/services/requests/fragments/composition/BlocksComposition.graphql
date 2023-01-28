@@ -2,6 +2,7 @@ fragment BlocksComposition on BlocksComposition
 {
     components{
         ...BannerComponent
-        ...RassurantComponent
+        ...RassurantsComponent
+        ...TeachersComponent
     }
 }
