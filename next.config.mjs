@@ -1,3 +1,10 @@
+import {
+  PHASE_DEVELOPMENT_SERVER,
+  PHASE_EXPORT,
+  PHASE_PRODUCTION_BUILD,
+  PHASE_PRODUCTION_SERVER,
+  PHASE_TEST,
+} from 'next/constants.js';
 import { resolve } from 'path';
 
 /** @type {import("next").NextConfig} */
@@ -15,9 +22,10 @@ const config = {
     },
 };
 
-/** @type {(phase: string) => import("next").NextConfig} */
+/** @type {(phase: PHASE_DEVELOPMENT_SERVER | PHASE_EXPORT | PHASE_PRODUCTION_BUILD | PHASE_PRODUCTION_SERVER | PHASE_TEST) => import("next").NextConfig} */
 function build(phase)
 {
+    console.info({phase});
     return {
         ...config,
         webpack(config, options)
