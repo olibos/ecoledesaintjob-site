@@ -555,6 +555,8 @@ export type BannerComponent = Element & {
   description?: Maybe<Scalars['String']>;
   /** The unique identifier. */
   id: Scalars['ID'];
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
   /** Surtitre */
   surtitle?: Maybe<Scalars['String']>;
   /** Titre */
@@ -2860,6 +2862,8 @@ export type Rassurant = Element & {
   description?: Maybe<Scalars['String']>;
   /** The unique identifier. */
   id: Scalars['ID'];
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
   /** Titre */
   title?: Maybe<Scalars['String']>;
 };
@@ -2877,6 +2881,8 @@ export type RassurantsComponent = Element & {
   id: Scalars['ID'];
   /** Liste */
   list: Array<RassurantBlockListItem>;
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
 };
 
 export type RassurantsComponentBlockListItem = {
@@ -2907,6 +2913,8 @@ export type Teacher = Element & {
   id: Scalars['ID'];
   /** Photo */
   photo?: Maybe<EditorTeacherPhotoMediaPicker>;
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
   /** Fonction */
   teacherFunction?: Maybe<Scalars['String']>;
   /** Nom */
@@ -2924,6 +2932,8 @@ export type TeachersComponent = Element & {
   contentTypeAlias: Scalars['String'];
   /** The unique identifier. */
   id: Scalars['ID'];
+  /** Run a subquery */
+  subQuery?: Maybe<Query>;
   /** Surtitre */
   surtitle?: Maybe<Scalars['String']>;
   /** Professeurs */

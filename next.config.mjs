@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs';
 import {
   PHASE_DEVELOPMENT_SERVER,
   PHASE_EXPORT,
@@ -28,6 +29,10 @@ function build(phase)
     console.info({phase});
     return {
         ...config,
+        images:{
+            ...config.images,
+            unoptimized: phase !== PHASE_DEVELOPMENT_SERVER,
+        },
         webpack(config, options)
         {
             let cfg = options.config.serverRuntimeConfig;
