@@ -5,7 +5,7 @@ import {
 
 import type { PageContent } from '@/services/Umbraco';
 
-const context = createContext(null);
+const context = createContext<any>(null);
 context.displayName = "PageContentContext";
 
 export const PageContentContextProvider = context.Provider;

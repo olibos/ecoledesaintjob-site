@@ -11,6 +11,8 @@ generates:
         DateTime: string
         JSON: any
         Unknown: unknown
+      maybeValue: T
+      avoidOptionals: true
     plugins:
       - "typescript"
       - "typescript-operations"

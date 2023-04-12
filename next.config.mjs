@@ -1,16 +1,18 @@
 import { writeFileSync } from 'fs';
 import {
   PHASE_DEVELOPMENT_SERVER,
-  PHASE_EXPORT,
   PHASE_PRODUCTION_BUILD,
   PHASE_PRODUCTION_SERVER,
-  PHASE_TEST,
 } from 'next/constants.js';
 import { resolve } from 'path';
 
 /** @type {import("next").NextConfig} */
 const config = {
     reactStrictMode: true,
+    experimental:{
+        appDir: true,
+    },
+    trailingSlash: true,
     images: {
         remotePatterns: [
             {
@@ -23,15 +25,17 @@ const config = {
     },
 };
 
-/** @type {(phase: PHASE_DEVELOPMENT_SERVER | PHASE_EXPORT | PHASE_PRODUCTION_BUILD | PHASE_PRODUCTION_SERVER | PHASE_TEST) => import("next").NextConfig} */
+/** @type {(phase: PHASE_DEVELOPMENT_SERVER | PHASE_PRODUCTION_BUILD | PHASE_PRODUCTION_SERVER) => import("next").NextConfig} */
 function build(phase)
 {
-    console.info({phase});
+    const isExport = phase === PHASE_PRODUCTION_BUILD;
     return {
         ...config,
+        output: isExport ? 'export' : undefined,
+        distDir: isExport ? 'dist' : undefined,
         images:{
             ...config.images,
-            unoptimized: phase !== PHASE_DEVELOPMENT_SERVER,
+            unoptimized: isExport,
         },
         webpack(config, options)
         {

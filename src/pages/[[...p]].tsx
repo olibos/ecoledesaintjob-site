@@ -54,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () =>
 // `getStaticPaths` requires using `getStaticProps`
 export const getStaticProps: GetStaticProps = async (context) =>
 {
-  const urlSegments = context.params.p as string[];
+  const urlSegments = context.params!.p as string[];
   const { getUmbracoClient } = await import('@/services/Umbraco');
   const client = getUmbracoClient();
   const props = await client.getPage({ url: urlSegments ? `/${urlSegments.join('/')}/` : '/' });

@@ -13,8 +13,7 @@ import { getSdk } from './GraphQL';
 //     }
 // } = getConfiguration();
 const umbracoCmsBaseUrl = 'http://localhost:40824/graphql/';
-
-export type PageContent<PageType extends {} = GetPageQuery['page']> = Omit<GetPageQuery, 'page'> &
+export type PageContent<PageType extends any = GetPageQuery['page']> = Omit<GetPageQuery, 'page'> &
 {
     preview?: boolean;
 //    navigation: NavigationFragment;
