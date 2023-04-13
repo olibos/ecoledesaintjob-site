@@ -25,6 +25,7 @@
     "@graphql-codegen/typescript": "^3.0.3",
     "@graphql-codegen/typescript-graphql-request": "^4.5.9",
     "@graphql-codegen/typescript-operations": "^3.0.3",
+    "@total-typescript/ts-reset": "^0.4.2",
     "@types/aos": "^3.0.4",
     "@types/classnames": "^2.3.1",
     "@types/node": "^18.15.11",
