@@ -10,7 +10,7 @@ export function About()
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-5" data-aos="fade-right">
-                        <img className="img-fluid rounded mb-5 mb-lg-0" src="img/about-1.jpg" alt="" />
+                        <img className="img-fluid rounded mb-5 mb-lg-0" src="/img/about-1.jpg" alt="" />
                     </div>
                     <div className="col-lg-7" data-aos="fade-left">
                         <p className="section-title pr-5"><span className="pr-2">En savoir plus</span></p>
@@ -20,7 +20,7 @@ export function About()
                             dolor</p>
                         <div className="row pt-2 pb-4">
                             <div className="col-6 col-md-4">
-                                <img className="img-fluid rounded" src="img/about-2.jpg" alt="" />
+                                <img className="img-fluid rounded" src="/img/about-2.jpg" alt="" />
                             </div>
                             <div className="col-6 col-md-8">
                                 <ul className="list-inline m-0">

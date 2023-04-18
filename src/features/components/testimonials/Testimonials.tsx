@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import Slider, { Settings } from 'react-slick';
 
+import Slider, { Settings } from '../slider';
 import Styles from './Testimonials.module.scss';
 
 const settings: Settings = {
@@ -32,7 +32,7 @@ export function Testimonials()
                             </section>
                         </div>
                         <div className="d-flex align-items-center">
-                            <img className="rounded-circle" src="img/testimonial-1.jpg" style={{ width: 70, height: 70 }} alt="Image" />
+                            <img className="rounded-circle" src="/img/testimonial-1.jpg" style={{ width: 70, height: 70 }} alt="Image" />
                             <div className="pl-3">
                                 <h5>Raph Mac</h5>
                             </div>
@@ -46,7 +46,7 @@ export function Testimonials()
                             </section>
                         </div>
                         <div className="d-flex align-items-center">
-                            <img className="rounded-circle" src="img/testimonial-2.jpg" style={{ width: 70, height: 70 }} alt="Image" />
+                            <img className="rounded-circle" src="/img/testimonial-2.jpg" style={{ width: 70, height: 70 }} alt="Image" />
                             <div className="pl-3">
                                 <h5>Parent Name</h5>
                             </div>
@@ -60,7 +60,7 @@ export function Testimonials()
                             </section>
                         </div>
                         <div className="d-flex align-items-center">
-                            <img className="rounded-circle" src="img/testimonial-3.jpg" style={{ width: 70, height: 70 }} alt="Image" />
+                            <img className="rounded-circle" src="/img/testimonial-3.jpg" style={{ width: 70, height: 70 }} alt="Image" />
                             <div className="pl-3">
                                 <h5>Parent Name</h5>
                             </div>
@@ -74,7 +74,7 @@ export function Testimonials()
                             </section>
                         </div>
                         <div className="d-flex align-items-center">
-                            <img className="rounded-circle" src="img/testimonial-4.jpg" style={{ width: 70, height: 70 }} alt="Image" />
+                            <img className="rounded-circle" src="/img/testimonial-4.jpg" style={{ width: 70, height: 70 }} alt="Image" />
                             <div className="pl-3">
                                 <h5>Parent Name</h5>
                             </div>

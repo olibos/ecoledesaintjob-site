@@ -10,7 +10,7 @@ export function NewsList()
                 <div className="row pb-3">
                     <div className="col-lg-4 mb-4">
                         <div className="card border-0 shadow-sm mb-2">
-                            <img className="card-img-top mb-2" src="img/blog-1.jpg" alt="" />
+                            <img className="card-img-top mb-2" src="/img/blog-1.jpg" alt="" />
                             <div className="card-body bg-light text-center p-4">
                                 <h4 className="">Diam amet eos at no eos</h4>
                                 <div className="d-flex justify-content-center mb-3">
@@ -24,7 +24,7 @@ export function NewsList()
                     </div>
                     <div className="col-lg-4 mb-4">
                         <div className="card border-0 shadow-sm mb-2">
-                            <img className="card-img-top mb-2" src="img/blog-2.jpg" alt="" />
+                            <img className="card-img-top mb-2" src="/img/blog-2.jpg" alt="" />
                             <div className="card-body bg-light text-center p-4">
                                 <h4 className="">Diam amet eos at no eos</h4>
                                 <div className="d-flex justify-content-center mb-3">
@@ -38,7 +38,7 @@ export function NewsList()
                     </div>
                     <div className="col-lg-4 mb-4">
                         <div className="card border-0 shadow-sm mb-2">
-                            <img className="card-img-top mb-2" src="img/blog-3.jpg" alt="" />
+                            <img className="card-img-top mb-2" src="/img/blog-3.jpg" alt="" />
                             <div className="card-body bg-light text-center p-4">
                                 <h4 className="">Diam amet eos at no eos</h4>
                                 <div className="d-flex justify-content-center mb-3">

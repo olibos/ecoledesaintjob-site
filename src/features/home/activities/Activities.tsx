@@ -12,7 +12,7 @@ export function Activities()
                 <div className="row">
                     <div className="col-lg-4 mb-5">
                         <div className="card border-0 bg-light shadow-sm pb-2">
-                            <img className="card-img-top mb-2" src="img/class-1.jpg" alt="" />
+                            <img className="card-img-top mb-2" src="/img/class-1.jpg" alt="" />
                             <div className="card-body text-center">
                                 <h4 className="card-title">Drawing Class</h4>
                                 <p className="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
@@ -22,7 +22,7 @@ export function Activities()
                     </div>
                     <div className="col-lg-4 mb-5">
                         <div className="card border-0 bg-light shadow-sm pb-2">
-                            <img className="card-img-top mb-2" src="img/class-2.jpg" alt="" />
+                            <img className="card-img-top mb-2" src="/img/class-2.jpg" alt="" />
                             <div className="card-body text-center">
                                 <h4 className="card-title">Language Learning</h4>
                                 <p className="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
@@ -32,7 +32,7 @@ export function Activities()
                     </div>
                     <div className="col-lg-4 mb-5">
                         <div className="card border-0 bg-light shadow-sm pb-2">
-                            <img className="card-img-top mb-2" src="img/class-3.jpg" alt="" />
+                            <img className="card-img-top mb-2" src="/img/class-3.jpg" alt="" />
                             <div className="card-body text-center">
                                 <h4 className="card-title">Basic Science</h4>
                                 <p className="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>

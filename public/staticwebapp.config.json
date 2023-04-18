@@ -1,0 +1,48 @@
+{
+  "routes": [
+    {
+      "route": "/.auth/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/_next/*",
+      "headers": {
+        "content-security-policy": "",
+        "feature-policy": "",
+        "permissions-policy": "",
+        "cache-control": "public, max-age=31536000, immutable",
+        "etag": "",
+        "link": ""
+      }
+    },
+    {
+      "route": "/*.{txt,png,jpg,jpeg,gif,xml,ico,json,webmanifest,css,woff,eot,ttf,js}",
+      "headers": {
+        "content-security-policy": "",
+        "feature-policy": "",
+        "permissions-policy": "",
+        "link": ""
+      }
+    }
+  ],
+  "globalHeaders": {
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "content-security-policy": "default-src 'none';manifest-src 'self';connect-src 'self';style-src 'unsafe-inline' 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/;script-src 'unsafe-eval' 'unsafe-inline' 'self'; img-src 'self' data: https://ik.imagekit.io/stockath/stjob/ cdn-61373911c1ac189674c0a5e7.closte.com; font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/",
+    "feature-policy": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'",
+    "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+    "link": "<https://ik.imagekit.io>; rel=preconnect; crossorigin"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/_not-found.html",
+      "statusCode": 404
+    }
+  },
+  "mimeTypes": {
+    ".webmanifest": "application/manifest+json",
+    ".js": "application/javascript"
+  }
+}

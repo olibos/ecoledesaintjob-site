@@ -19,7 +19,7 @@ export function Banner({surtitle, title, description, backgroundImage, buttonTex
                     {!!buttonTarget && !!buttonText && <Link href={buttonTarget.url} className="btn btn-secondary mt-1 py-3 px-5">{buttonText}</Link>}
                 </div>
                 {/* <div className="col-lg-6 text-center text-lg-right">
-                    <img className="img-fluid mt-5" src="img/header.png" alt="" />
+                    <img className="img-fluid mt-5" src="/img/header.png" alt="" />
                 </div> */}
             </div>
             {/* <div className={Styles.overlay}></div> */}

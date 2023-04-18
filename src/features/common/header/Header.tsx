@@ -1,17 +1,18 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import Logo from '@/assets/images/logo2.svg';
-import { usePageContentContext } from '@/contexts/PageContentContext';
+import {
+  getNavigation,
+  getUrl,
+} from '@/contexts/server';
 
 import { Image } from '../image';
 
 export function Header()
 {
-    const {p} = useRouter().query;
-    const url = p ? `/${(p as string[]).join('/')}/` : '/'; 
-    const {navigation:{topMenu}} = usePageContentContext();
+    const url = getUrl(); 
+    const { topMenu } = getNavigation();
     return (
         <div className="container-fluid bg-light position-relative shadow">
             <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">

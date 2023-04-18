@@ -3,6 +3,7 @@ query getPages {
     pages: descendantsOrSelf(where: { templateId_gt: 0 }) {
       items {
         url
+        lastModified: updateDate
       }
     }
   }

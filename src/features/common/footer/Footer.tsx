@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 
 import Logo from '@/assets/images/logo.svg';
-import { usePageContentContext } from '@/contexts/PageContentContext';
+import { getNavigation } from '@/contexts/server';
 import {
   Email,
   MapMarker,
@@ -14,7 +14,7 @@ import Styles from './Footer.module.scss';
 
 export function Footer()
 {
-    const {navigation:{footerMenu}} = usePageContentContext();
+    const { footerMenu } = getNavigation();
     return (
         <div className={classNames("container-fluid bg-secondary mt-5 py-5 px-sm-3 px-md-5", Styles.footer)}>
             <div className="row pt-5">
@@ -31,7 +31,7 @@ export function Footer()
                         <MapMarker width={32} color="#17a2b8" />
                         <div className="pl-3">
                             <h5 className="text-white">Adresse</h5>
-                            <p><a href="https://www.google.com/maps/dir//Rue Jean Benaets, 74, 1180 Uccle/" target="_blank" rel="noreferrer">Rue Jean Benaets, 74<br />1180 Uccle</a></p>
+                            <p><a href="https://www.google.com/maps/dir//Rue Jean Benaets, 74, 1180 Uccle/" target="_blank" rel="noopener">Rue Jean Benaets, 74<br />1180 Uccle</a></p>
                         </div>
                     </div>
                     <div className="d-flex">
@@ -39,8 +39,8 @@ export function Footer()
                         <div className="pl-3">
                             <h5 className="text-white">Email</h5>
                             <ul>
-                            <li><a href="mailto:saintjob.secretariat@uccle.edu.brussels">Secrétariat</a></li>
-                            <li><a href="mailto:saintjob.direction@uccle.edu.brussels">Direction</a></li>
+                                <li><a href="mailto:saintjob.secretariat@uccle.edu.brussels">Secrétariat</a></li>
+                                <li><a href="mailto:saintjob.direction@uccle.edu.brussels">Direction</a></li>
                             </ul>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ export function Footer()
                 <div className="col-lg-4 mb-5">
                     <h3 className="text-primary mb-4">Liens rapides</h3>
                     <ul>
-                        {footerMenu.map(({title, content}, key)=>
+                        {footerMenu.map(({ title, content }, key) =>
                             <li key={key}><Link href={content?.url}>{title || content?.name}</Link></li>
                         )}
                     </ul>
@@ -64,7 +64,7 @@ export function Footer()
             <div className="container-fluid pt-5" style={{ borderTop: "1px solid rgba(23, 162, 184, .2)" }}>
                 <p className="m-0 text-center text-white">
                     &copy; <Link className="text-primary font-weight-bold" href="/">École de Saint-Job</Link>. Tous droits réservé. <br />
-                    Designed by <a className="text-primary font-weight-bold" href="https://htmlcodex.com" target="_blank" rel="noreferrer">HTML Codex</a>
+                    Designed by <a className="text-primary font-weight-bold" href="https://htmlcodex.com" target="_blank" rel="noopener">HTML Codex</a>
                 </p>
             </div>
         </div>

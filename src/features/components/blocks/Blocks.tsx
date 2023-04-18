@@ -1,4 +1,4 @@
-import { usePageContentContext } from '@/contexts/PageContentContext';
+import { getPage } from '@/contexts/server';
 import type { BlocksComposition } from '@/services/GraphQL';
 
 import { Banner } from '../banner';
@@ -21,11 +21,12 @@ function factory(item: BlocksComposition['components'][0], key: number)
 }
 export function Blocks()
 {
-    const { page: { components } } = usePageContentContext<BlocksComposition>();
+    const { components } = getPage();
     if (!components)
     {
         return null;
     }
 
-    return <>{components.map(factory)}</>
+    // TODO: fix the null checks
+    return <>{components.map(factory as any)}</>
 }
